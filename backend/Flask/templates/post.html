@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Hello</h1>
+<table>
+{% for post in posts %}
+    <tr>
+        <td>{{ post.id }}</td>
+        <td>작성자: {{ post.user_id }}</td>
+        <td>작성 날짜: {{ post.post_date }}</td>
+        <td>제목: {{ post.title }}</td>
+        <td>카테고리: {{ post.category }}</td>
+        
+
+    </tr>
+{% endfor %}
+</table>
+
+</body>
+</html>

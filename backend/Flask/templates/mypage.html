@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Hello</h1>
+    <form action="{{ url_for('user.upload_file') }}" method="post" enctype="multipart/form-data" >
+        <input type="file" name="file"/>
+        <input type="submit" />
+    </form>
+<table>
+    <tr>
+        <img src="{{ user.profile }}"></img>
+        <td>아이디: {{user.id}}</td>
+        <td>이름: {{ user.name }}</td>
+        <td>전화번호 {{ user.telephone }}</td>
+        <td>메일: {{ user.mail }}</td>
+    </tr>
+    <p>작성 포스트</p>
+    {% for post in user.posts %}
+    <tr>
+        <td>작성 날짜: {{ post.post_date }}</td>
+        <td>{{ post.id }}</td>
+        <td>제목: {{ post.title }}</td>
+    </tr>
+    {% endfor %}
+
+    <p>작성 댓글</p>
+    {% for comment in user.comments %}
+        <tr>
+            <td>{{ comment.id }}</td>
+            <td>{{ comment.post_date }}</td>
+            {% if comment.update_date %}
+            <td>수정 날짜: {{ comment.update_date }}</td>
+        {% endif %}
+            <td>{{ comment.content }}</td>
+            
+
+        </tr>
+    {% endfor %}
+</table>
+</body>

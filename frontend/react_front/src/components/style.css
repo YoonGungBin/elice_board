@@ -1,0 +1,53 @@
+
+@import '~antd/dist/antd.css';
+
+
+/*로그인전(메인페이지)*/
+.Main-container {
+    background-color: rgba(142, 11, 245, 0.15);
+}
+
+.Main-header{
+    min-height: 7vh;
+    display : grid;
+    grid-template-columns: 0.1fr 4fr 0.7fr 0.7fr 0.7fr 1fr
+}
+
+.Basic-Bar{
+    padding: 0 0 0 0;
+    margin : 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 메인페이지 라인 */
+
+.Main-header-Line {
+    border : solid 1px;
+    width: 95vw;
+    color : rgb(80, 78, 78);
+}
+
+
+.Main-banner-Line {
+    border : solid 1px;
+    width : 95vw;
+    color : rgb(80, 78, 78)
+}
+
+
+/*loginpage*/
+
+#components-form-demo-normal-login .login-form {
+max-width: 300px;
+}
+#components-form-demo-normal-login .login-form-forgot {
+float: right;
+}
+#components-form-demo-normal-login .ant-col-rtl .login-form-forgot {
+float: left;
+}
+#components-form-demo-normal-login .login-form-button {
+width: 100%;
+}
