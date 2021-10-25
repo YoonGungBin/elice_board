@@ -1,12 +1,8 @@
-from datetime import date, datetime, timedelta, timezone
 from flask import Blueprint, render_template, request, session, jsonify
-from flask.wrappers import Response
 from flask_jwt_extended.utils import set_access_cookies, unset_jwt_cookies
 from werkzeug.utils import redirect, secure_filename
 from bcrypt import hashpw, checkpw, gensalt
-import jwt
 
-from flask_jwt_extended import JWTManager
 from flask_jwt_extended import (
     create_access_token, create_refresh_token, jwt_required, get_jwt_identity
 )
@@ -14,7 +10,7 @@ from flask_jwt_extended import (
 
 bp = Blueprint('user', __name__)
 
-from model.model import *
+from domain.models.user import *
 
 # 회원가입
 @bp.route("/register", methods=['GET', 'POST'])
